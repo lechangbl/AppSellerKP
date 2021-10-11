@@ -11,16 +11,19 @@ const Menu = ({ navigation }) => {
 
 
     return (
-        <View
-            style={{
-
-            }}
+        <View style={{ flex: 1 }}
         >
             <Header Open={open} />
-
-            <Text>
-                MENU
-            </Text>
+            <View
+                style={{
+                    flex: 1,
+                    backgroundColor: 'gray'
+                }}
+            >
+                <Text>
+                    MENU
+                </Text>
+            </View>
         </View>
     )
 }

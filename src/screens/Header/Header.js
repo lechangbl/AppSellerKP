@@ -9,6 +9,8 @@ import { perfectSize } from '../../themes'
 import iconIMG from '../../media/appIcon'
 
 const Header = (props) => {
+    const title = 'Wearing a Dress!'
+
     const openDawer = () => { props.Open() }
     return (
         <View style={styles.container}>
@@ -24,7 +26,7 @@ const Header = (props) => {
                 </TouchableOpacity>
 
                 <Text style={styles.styleTextTitle}>
-                    MAIN
+                    {title}
                 </Text>
 
                 <TouchableOpacity
