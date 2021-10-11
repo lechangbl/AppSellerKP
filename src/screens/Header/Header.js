@@ -1,6 +1,5 @@
 import React from 'react'
 import {
-    Button,
     Text, TouchableOpacity, View, Image, TextInput, StyleSheet
 } from 'react-native'
 import {
@@ -9,13 +8,14 @@ import {
 import { perfectSize } from '../../themes'
 import iconIMG from '../../media/appIcon'
 
-const Header = ({ navigation }) => {
+const Header = (props) => {
+    const openDawer = () => { props.Open() }
     return (
         <View style={styles.container}>
 
             <View style={styles.viewMain}>
                 <TouchableOpacity
-                    onPress={() => console.log('menu')}
+                    onPress={openDawer}
                 >
                     <Image
                         source={iconIMG.IcMenu}
