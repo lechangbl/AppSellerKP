@@ -7,5 +7,7 @@ export default iconIMG = {
     tabSearch: require('./search.png'),
     tabContact: require('./contact.png'),
 
+    IcBackWhite: require('./back_white.png')
+
 
 }

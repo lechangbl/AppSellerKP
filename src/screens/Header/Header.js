@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         alignItems: 'center',
-        // marginTop: perfectSize(10)
     },
     styleIMG: {
         height: perfectSize(40),

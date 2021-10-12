@@ -9,7 +9,6 @@ import { styles } from "./styles";
 
 const MenuSignOut = () => {
     const avatar = require('../../../media/avatar/avatar-placehoder.png')
-    const username = 'Le Van Chang'
 
     return (
         <View

@@ -3,6 +3,10 @@ import Menu from './Menu/Menu';
 import Shop from './Shop/Shop';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import { perfectSize } from '../../themes';
+import SignInNow from './Menu/sign/SignInNow';
+import SignUpNow from './Menu/sign/SignUpNow';
+import SignIn from './Menu/sign/SignIn';
+
 
 const Drawer = createDrawerNavigator();
 
@@ -11,18 +15,16 @@ const Main = ({ navigation }) => {
       <Drawer.Navigator
          screenOptions={{
             drawerStyle: {
-               width: perfectSize(300),
+               width: perfectSize(350),
             },
             headerShown: false
 
          }}
-         // initialRouteName='Menu'
-         drawerContent={(props) => <Menu {...props} />}
-
+         drawerContent={() => <Menu />}
       >
          <Drawer.Screen
             name="Shop"
-            component={Shop}
+            component={SignIn}
          />
       </Drawer.Navigator>
    );
