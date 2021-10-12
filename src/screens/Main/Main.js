@@ -19,27 +19,25 @@ const Main = ({ navigation }) => {
       <Drawer.Navigator
          screenOptions={{
             drawerStyle: {
-               backgroundColor: 'pink',
+               // backgroundColor: 'pink',
                width: 340,
             },
+            headerShown: false
+
          }}
-         initialRouteName='Menu'
+         // initialRouteName='Menu'
+
+         drawerContent={(props) => <Menu {...props} />}
+
       >
          <Drawer.Screen
-            options={{
-               headerShown: false
-            }}
             name="Shop"
             component={Shop}
          />
-         <Drawer.Screen
-            options={{
-               headerShown: false
-            }}
-
+         {/* <Drawer.Screen
             name="Menu"
             component={Menu}
-         />
+         /> */}
       </Drawer.Navigator>
    );
 };

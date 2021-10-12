@@ -1,14 +1,16 @@
 import React from "react";
 import {
-   Text, View, Image
+   View, Image, StyleSheet
 } from 'react-native'
-import { TouchableOpacity } from "react-native-gesture-handler";
 import { Header } from '../../../screens'
 import {
    Home, Search, Cart, Contact
 } from '../Shop/bottomtab'
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import iconIMG from '../../../media/appIcon'
+import { perfectSize } from '../../../themes'
 
+// =======================================================================
 const Tab = createBottomTabNavigator();
 
 const Shop = ({ navigation }) => {
@@ -20,19 +22,17 @@ const Shop = ({ navigation }) => {
             <Tab.Navigator
                screenOptions={{
                   tabBarActiveBackgroundColor: 'yellow',
-                  // tabBarInactiveBackgroundColor: 'gray',
                   tabBarHideOnKeyboard: true,
                   headerShown: false,
-
                }}
-               initialRouteName="Contact"
+               initialRouteName="Home"
             >
                <Tab.Screen
                   options={{
                      tabBarIcon: () => (
                         <Image
-                           source={require('../../../media/appIcon/home.png')}
-                           style={{ width: 30, height: 30 }}
+                           source={iconIMG.tabHome}
+                           style={styles.iconImage}
                         />
                      ),
                   }}
@@ -43,10 +43,16 @@ const Shop = ({ navigation }) => {
                   options={{
                      tabBarIcon: () => (
                         <Image
-                           source={require('../../../media/appIcon/cart.png')}
-                           style={{ width: 30, height: 30 }}
+                           source={iconIMG.tabCart}
+                           style={styles.iconImage}
                         />
                      ),
+                     tabBarBadge: 20,
+                     tabBarBadgeStyle: {
+                        color: 'white',
+                        backgroundColor: 'blue'
+                        // fontSize: 20
+                     }
                   }}
                   name="Cart"
                   component={Cart}
@@ -55,8 +61,8 @@ const Shop = ({ navigation }) => {
                   options={{
                      tabBarIcon: () => (
                         <Image
-                           source={require('../../../media/appIcon/search.png')}
-                           style={{ width: 30, height: 30 }}
+                           source={iconIMG.tabSearch}
+                           style={styles.iconImage}
                         />
                      ),
                   }}
@@ -67,8 +73,8 @@ const Shop = ({ navigation }) => {
                   options={{
                      tabBarIcon: () => (
                         <Image
-                           source={require('../../../media/appIcon/contact.png')}
-                           style={{ width: 30, height: 30 }}
+                           source={iconIMG.tabContact}
+                           style={styles.iconImage}
                         />
                      ),
                   }}
@@ -81,5 +87,12 @@ const Shop = ({ navigation }) => {
       </View>
    )
 }
+
+const styles = StyleSheet.create({
+   iconImage: {
+      width: perfectSize(30),
+      height: perfectSize(30),
+   }
+})
 
 export default Shop

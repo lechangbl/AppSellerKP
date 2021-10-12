@@ -1,9 +1,15 @@
 import React from 'react';
+import {
+   statusbar
+} from 'react-native'
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import {
    Main, Authentication, OderHistory, ChangeInfo, Header
 } from './src/screens'
+
+
+
 
 const Stack = createNativeStackNavigator();
 

@@ -1,31 +1,30 @@
 import React from "react";
 import {
-    Text, View
+   Text, View, Image
 } from 'react-native'
 import { TouchableOpacity } from "react-native-gesture-handler";
+
 import {
-    Header
-} from '../../../screens'
-const Menu = ({ navigation }) => {
-    const open = () => { navigation.openDrawer() }
+   colors
+} from '../../../themes'
 
+import MenuSignin from "./MenuSignin";
+import MenuSignOut from "./MenuSignOut";
 
-    return (
-        <View style={{ flex: 1 }}
-        >
-            <Header Open={open} />
-            <View
-                style={{
-                    flex: 1,
-                    backgroundColor: 'gray'
-                }}
-            >
-                <Text>
-                    MENU
-                </Text>
-            </View>
-        </View>
-    )
+const Menu = () => {
+
+   return (
+      <View
+         style={{
+            flex: 1,
+            backgroundColor: colors.backgroundGreen,
+            alignItems: 'center'
+         }}
+      >
+         <MenuSignin />
+
+      </View>
+   );
 }
 
 export default Menu
