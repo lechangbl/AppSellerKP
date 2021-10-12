@@ -68,14 +68,14 @@ const styles = StyleSheet.create({
     },
     styleTextTitle: {
         fontSize: fontsize.h2,
-        color: colors.white,
+        color: colors.titleTextHeader,
         fontWeight: 'bold'
     },
     styleTextInput: {
         width: perfectSize(390),
         padding: perfectSize(10),
         height: perfectSize(45),
-        backgroundColor: 'white',
+        backgroundColor: colors.backgroundTextInput,
         fontSize: perfectSize(22)
     }
 })

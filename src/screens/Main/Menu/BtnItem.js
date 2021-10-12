@@ -3,6 +3,8 @@ import { Text } from 'react-native';
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { colors } from '../../../themes';
 import { perfectSize } from "../../../themes";
+
+
 export const BtnItem = ({ title }) => (
     <TouchableOpacity
         style={{

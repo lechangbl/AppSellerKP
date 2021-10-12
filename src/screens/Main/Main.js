@@ -1,16 +1,8 @@
-import { createDrawerNavigator } from '@react-navigation/drawer';
-import { NavigationContainer } from '@react-navigation/native';
 import React from 'react'
-import {
-   Text, TouchableOpacity, View,
-} from 'react-native'
-// import { Header } from 'react-native/Libraries/NewAppScreen';
-import {
-   colors, fontsize
-} from '../../themes'
 import Menu from './Menu/Menu';
 import Shop from './Shop/Shop';
-import { Header } from '../../screens';
+import { createDrawerNavigator } from '@react-navigation/drawer';
+import { perfectSize } from '../../themes';
 
 const Drawer = createDrawerNavigator();
 
@@ -19,14 +11,12 @@ const Main = ({ navigation }) => {
       <Drawer.Navigator
          screenOptions={{
             drawerStyle: {
-               // backgroundColor: 'pink',
-               width: 340,
+               width: perfectSize(300),
             },
             headerShown: false
 
          }}
          // initialRouteName='Menu'
-
          drawerContent={(props) => <Menu {...props} />}
 
       >
@@ -34,10 +24,6 @@ const Main = ({ navigation }) => {
             name="Shop"
             component={Shop}
          />
-         {/* <Drawer.Screen
-            name="Menu"
-            component={Menu}
-         /> */}
       </Drawer.Navigator>
    );
 };
