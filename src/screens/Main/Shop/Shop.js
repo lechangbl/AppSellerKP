@@ -12,9 +12,11 @@ export const Tab = createBottomTabNavigator();
 
 const Shop = ({ navigation }) => {
    const open = () => { navigation.openDrawer() }
+
    return (
       <View style={{ flex: 1 }} >
          <Header Open={open} />
+
          <View style={{ flex: 1 }}>
             {BottomTab()}
          </View>

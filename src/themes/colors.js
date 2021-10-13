@@ -7,7 +7,9 @@ const colors = {
     backgroundTextInput: 'white',
 
     colorBaddge: 'red',
-    colorTextBaddge: 'white'
+    colorTextBaddge: 'white',
+
+    textGray: '#6f7d7c'
 };
 
 export { colors };

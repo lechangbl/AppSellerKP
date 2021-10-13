@@ -24,7 +24,7 @@ const Main = ({ navigation }) => {
       >
          <Drawer.Screen
             name="Shop"
-            component={SignIn}
+            component={Shop}
          />
       </Drawer.Navigator>
    );
