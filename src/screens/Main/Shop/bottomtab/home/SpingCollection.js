@@ -1,9 +1,9 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from 'react-native';
-import { colors, fontsize } from "../../../../../themes";
+import { colors, fontsize, perfectSize } from "../../../../../themes";
 import tempIMG from '../../../../../media/temp';
 import { styles } from "./Home";
-
+import { imageSize } from "./Home";
 export default function SpingCollection() {
     return <View
         style={styles.itemStyle}
@@ -11,7 +11,7 @@ export default function SpingCollection() {
         <Text style={{
             fontSize: fontsize.h3,
             color: colors.textGray,
-            padding: 15
+            padding: perfectSize(15)
         }}>
             SPING COLLECTION
         </Text>
@@ -21,14 +21,13 @@ export default function SpingCollection() {
                 justifyContent: 'center',
                 alignItems: 'center',
                 flex: 1,
-                backgroundColor: 'red'
             }}
             onPress={() => console.log('press img')}
         >
             <Image
                 source={tempIMG.springCollection}
                 style={{
-                    width: '91%',
+                    width: imageSize.width,
                     resizeMode: 'contain'
                 }} />
         </TouchableOpacity>

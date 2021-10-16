@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 import {
-   View, Text, ScrollView, StyleSheet, Image, ImageBackground
+   View, ScrollView, StyleSheet, Image
 } from 'react-native'
-import { colors, fontsize, perfectSize } from "../../../../../themes";
+import { colors, perfectSize } from "../../../../../themes";
 import tempIMG from '../../../../../media/temp'
-import Swiper from 'react-native-swiper'
 import SpingCollection from "./SpingCollection";
 import temp from "../../../../../media/temp";
-import { swiperItem } from "./swiperItem";
+import { Category } from "./Category";
 
-const imageSize = {
-   height: perfectSize(185),
-   width: perfectSize(370)
+export const imageSize = {
+   height: perfectSize(175),
+   width: perfectSize(350)
 }
+
 
 const Home = () => {
    const [typeofProduct, setTypeofProduct] = useState({
@@ -20,6 +20,15 @@ const Home = () => {
       imageDress: tempIMG.category1,
    })
 
+   const TestPressImage = () => {
+      // return(
+      setTypeofProduct({
+         nameDress: 'Little',
+         imageDress: tempIMG.category3,
+      })
+      console.log('funtion ok')
+      // )
+   }
 
    return (
       <View
@@ -28,66 +37,11 @@ const Home = () => {
          <ScrollView
             contentContainerStyle={styles.scrollviewStyle}
          >
-            {/* <SpingCollection /> */}
-
-            <View
-               style={styles.itemStyle}
-            >
-               <View
-                  style={{
-                     flex: 1,
-                     backgroundColor: 'white'
-                  }}
-               >
-                  <Text style={{
-                     fontSize: fontsize.h3,
-                     color: colors.textGray,
-                     padding: 10
-                  }}>
-                     LIST OF CATEGORY
-                  </Text>
-               </View>
-
-               <View
-                  style={{
-                     flex: 4,
-                     justifyContent: 'flex-end',
-                     alignItems: 'center',
-                     backgroundColor: 'grey'
-                  }}
-               >
-                  <Swiper
-                     showsPagination
-                     width={imageSize.width}
-                     height={imageSize.height}
-                     loop={false}
-                  >
-                     {/* <swiperItem typeofProduct={typeofProduct} /> */}
-                     {swiperItem(typeofProduct)}
-
-                     <View
-                        style={styles.swiperStyle}
-                     >
-                        <ImageBackground
-                           source={tempIMG.category2}
-                           style={styles.imageSwiperStyle}
-                        >
-                           <Text
-                              style={{
-                                 fontSize: fontsize.h2,
-                                 color: colors.textGray,
-                                 marginBottom: 40
-                              }}
-                           >
-                              Little Dress
-                           </Text>
-                        </ImageBackground>
-                     </View>
-
-                  </Swiper>
-               </View>
-
-            </View>
+            <SpingCollection />
+            <Category
+               typeofProduct={typeofProduct}
+               TestPressImage={TestPressImage}
+            />
 
             <View
                style={styles.itemStyle}
@@ -104,35 +58,44 @@ export const styles = StyleSheet.create({
    container: {
       flex: 1,
       backgroundColor: colors.backgroundGray,
-      // backgroundColor: 'tomato'
    },
    scrollviewStyle: {
       alignItems: 'center'
    },
    itemStyle: {
-      backgroundColor: colors.backgroundGreen,
-      width: '93%',
-      height: perfectSize(273),
-      marginTop: perfectSize(20),
-      justifyContent: 'space-between'
+      backgroundColor: colors.backgroundWhite,
+      width: imageSize.width + 20,
+      height: imageSize.height + 100,
+      margin: perfectSize(20),
+      justifyContent: 'space-between',
+
+      shadowColor: "#000",
+      shadowOffset: {
+         width: 9,
+         height: 12,
+      },
+      shadowOpacity: 0.58,
+      shadowRadius: 16.00,
+
+      elevation: 24
    },
    swiperStyle: {
-      height: '100%',
-      width: '95%',
-      // backgroundColor: 'blue',
-      marginTop: perfectSize(4),
+      width: imageSize.width,
+      height: imageSize.height,
       justifyContent: 'center',
-      // alignItems: 'center'
+      alignItems: 'center',
+      backgroundColor: 'yellow'
    },
    imageSwiperStyle: {
       alignItems: 'center',
       justifyContent: 'flex-end',
-      width: imageSize.width - perfectSize(2),
       height: imageSize.height,
-      // resizeMode: 'contain',
+      resizeMode: 'contain',
+      width: imageSize.width,
    }
 })
 
 export default Home
+
 
 

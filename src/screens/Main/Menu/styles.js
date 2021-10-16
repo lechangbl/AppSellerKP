@@ -4,7 +4,7 @@ import { perfectSize } from '../../../themes';
 export const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: colors.backgroundGray,
+        backgroundColor: colors.backgroundGreen,
         alignItems: 'center'
     },
     avatarStyle: {

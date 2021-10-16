@@ -9,7 +9,7 @@ const Menu = () => {
    return (
       <View style={styles.container} >
 
-         <MenuSignOut />
+         <MenuSignin />
 
       </View>
    );

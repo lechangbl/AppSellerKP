@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, ImageBackground } from 'react-native';
 import { colors, fontsize } from "../../../../../themes";
-import { styles } from "./Home";
+import { imageSize, styles } from "./Home";
 
 export function swiperItem(typeofProduct) {
     return <View
@@ -15,7 +15,7 @@ export function swiperItem(typeofProduct) {
                 style={{
                     fontSize: fontsize.h2,
                     color: colors.textGray,
-                    marginBottom: 40
+                    marginBottom: imageSize.height / 3
                 }}
             >
                 {typeofProduct.nameDress} Dress
